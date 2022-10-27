@@ -10,13 +10,16 @@ function showTime(){
     ];
     var hour12;
     var hour24;
+    let ampm = document.getElementsByClassName("ampm");
     if (date.getHours() > 12){
+        ampm[0].textContent = "PM";
         hour24 = date.getHours();
         hour12 = hour24-12;
     }
     else{
+        ampm[0].textContent = "AM";
         hour24 = hour12 = date.getHours();
-    }
+    } 
     let hour = document.getElementsByClassName("hh");
     hour[0].textContent = String(hour12).padStart(2,'0');
     let minute = document.getElementsByClassName("mm");
